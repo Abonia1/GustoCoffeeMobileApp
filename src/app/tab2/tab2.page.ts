@@ -9,7 +9,10 @@ export class Tab2Page {
   today
   public currentNumber = 1;
   date: string;
-  type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
+  type: 'string';
+  public showplan: boolean = false;
+  public contineReservation: boolean = false;
+
   constructor() {
     this.today = new Date().toISOString();
   }
@@ -23,6 +26,13 @@ export class Tab2Page {
     if(this.currentNumber>1){
       this.currentNumber--;
     }
+  }
+  public voir(){
+    this.showplan = !this.showplan;
+  }
+  public continue(){
+    this.contineReservation = !this.contineReservation;
+
   }
 
 }
