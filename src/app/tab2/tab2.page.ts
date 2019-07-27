@@ -12,8 +12,6 @@ export class Tab2Page {
   constructor() {
     this.today = new Date().toISOString();
   }
-  onChange($event) {
-    console.log($event);
-  }
+
 
 }
