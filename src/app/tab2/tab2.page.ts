@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  today
+  date: string;
+  type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
+  constructor() {
+    this.today = new Date().toISOString();
+  }
+  onChange($event) {
+    console.log($event);
+  }
 
 }

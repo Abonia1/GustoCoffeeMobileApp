@@ -10,11 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import { CalendarModule } from 'ion2-calendar';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [HttpClientModule, HttpModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [HttpClientModule, HttpModule,IonicModule.forRoot(),CalendarModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [HttpClientModule,
     StatusBar,
     SplashScreen,
