@@ -4,8 +4,8 @@
             Réservation
         </ion-title>
         <div text-right>
-            <ion-button size="small">Sign in</ion-button>
-            <ion-button size="small">Sign up</ion-button>
+            <ion-button size="small" href="/login">Sign in</ion-button>
+            <ion-button size="small" href="/register">Sign up</ion-button>
         </div>
     </ion-toolbar>
 </ion-header>
@@ -184,7 +184,8 @@
         </svg>
             </div>
         </div>
-        <div *ngIf="buttonClicked" class='continue' id='continue' style="display:none">
+        <div class='continue' id='continue'>
+            <ion-checkbox [(ngModel)]="sausage" disabled="false"></ion-checkbox><span></span>
             <ion-label>Aimerait collaborer avec d'autres dans un espace de coworking</ion-label>
             <ion-button style="text-align: center" expand="full" color="success" (click)="continue()" full>Continuer la Reservation</ion-button>
         </div>

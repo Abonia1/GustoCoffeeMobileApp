@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {ProductService} from '../product.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
-
 import {Http,HttpModule, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -18,7 +17,7 @@ export class Tab3Page {
   public product: any;
   url:string;
   data:string;
-
+ 
   constructor(public _DomSanitizationService: DomSanitizer ,public productService: ProductService){
     this.loadProduct();
 
@@ -47,4 +46,5 @@ export class Tab3Page {
       this.product = data;
     });
   }
+
 }
