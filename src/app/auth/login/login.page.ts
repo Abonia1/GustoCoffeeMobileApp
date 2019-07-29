@@ -24,9 +24,9 @@ export class LoginPage implements OnInit {
 
   login(formValue:any){
     this.result = this.authService.login(formValue)
-    console.log(this.result);
+    //console.log(this.result);
     // .then(data=>{
-    //   this.router.navigateByUrl('../../tab1');
+      this.router.navigateByUrl('/home');
     // });
 
     // this.authService.login(formValue)

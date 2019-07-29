@@ -10,3 +10,19 @@ ion-button {
 a {
     color: blue;
 }
+
+.new-background-color {
+    color: #fff;
+    --background: #33903A;
+}
+
+.signup {
+    --text-align: center;
+    --display: block;
+    float: center;
+}
+
+p {
+    float: right;
+    color: #33903A
+}

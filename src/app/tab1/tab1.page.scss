@@ -3,11 +3,34 @@
     overflow: hidden;
 }
 
-.toolbar {
-    background-color: green;
-}
-
 .toolbar-background {
     background-color: lightgreen;
     color: white
+}
+
+.new-background-color {
+    background-image: url('../../assets/img/nos_revendeurs.jpg');
+    color: #fff;
+    // --background: #33903A;
+}
+
+ion-button {
+    --background: #33903A;
+    --border: #fff;
+}
+
+.background-image {
+    background-image: url('../../assets/img/nos_revendeurs.jpg');
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+h1 {
+    color: #fff;
+}
+
+.logo {
+    float: left;
 }

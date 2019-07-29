@@ -5,3 +5,13 @@ h2 {
 .label {
     color: #33903A;
 }
+
+.new-background-color {
+    color: #fff;
+    --background: #33903A;
+}
+
+ion-button {
+    --background: #33903A;
+    --border: #fff;
+}
