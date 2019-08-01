@@ -12,15 +12,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import { CalendarModule } from 'ion2-calendar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [FormsModule,HttpClientModule, HttpModule,IonicModule.forRoot(),CalendarModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [FormsModule,HttpClientModule, IonicStorageModule.forRoot(),HttpModule,IonicModule.forRoot(),CalendarModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [HttpClientModule,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent]
 })

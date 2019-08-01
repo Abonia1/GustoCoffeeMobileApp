@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title>Commandes</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-card-title class='unique'>Mes Reservation</ion-card-title> -->
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div *ngFor="let reserve of reservation">
+                    <ion-card-title>Reference de Reservation:{{reserve.reservation_id}}</ion-card-title>
+                    <ion-card>
+                        <ion-row>
+                            <ion-col width="60%" class="list">
+                                <ion-item>Date:</ion-item>
+                                <ion-item>Heure:</ion-item>
+                                <ion-item>Durée:</ion-item>
+                                <ion-item>Numéro de Table:</ion-item>
+                                <ion-item>Nombre de personnes:</ion-item>
+                                <ion-item>Paiement:</ion-item>
+                                <ion-item>status:</ion-item>
+
+                            </ion-col>
+                            <ion-col width="40%">
+                                <ion-item>{{reserve.reservation_id}}
+                                </ion-item>
+                                <ion-item>{{reserve.date}}</ion-item>
+                                <ion-item>{{reserve.time}}</ion-item>
+                                <ion-item>{{reserve.duree}}</ion-item>
+                                <ion-item>{{reserve.tbnumber}}</ion-item>
+                                <ion-item>{{reserve.quantity}}</ion-item>
+                                <ion-item>{{reserve.payment}}</ion-item>
+
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

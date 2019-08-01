@@ -8,7 +8,7 @@ import { AuthService } from '../../auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  public auth: any;
   email:any;
   password:any;
   public result:any;
@@ -24,9 +24,13 @@ export class LoginPage implements OnInit {
 
   login(formValue:any){
     this.result = this.authService.login(formValue)
+    .then(data=>{
+      this.auth=data;
+      this.router.navigateByUrl('/home');
+    });
     //console.log(this.result);
     // .then(data=>{
-      this.router.navigateByUrl('/home');
+
     // });
 
     // this.authService.login(formValue)
@@ -40,4 +44,6 @@ export class LoginPage implements OnInit {
 // });
 
 }
+
+
 }

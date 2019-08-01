@@ -7,10 +7,33 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-card>
-        <h2>
-            gustocoffe vous souhaite la bienvenue dans votre espace personnel.Essayez de trouver les options disponibles via le menu situé dans le coin gauche.</h2>
+    <h1 text-center>Mon espace client</h1>
+    <ion-col width=20%>
+        <!-- <img src="../../assets/img/gusto_coffee.png" class="logo"> -->
+    </ion-col>
+
+    <ion-card class="new-background">
+        <ion-card-content>
+            <ion-row>
+                <ion-col col-4></ion-col>
+                <ion-col col-4>
+                    <img src="../../assets/img/gusto_coffee.png" style="height: 50px;width: 50px;" />
+                </ion-col>
+                <ion-col col-4></ion-col>
+            </ion-row><br><br>
+            <h3>GustoCoffe vous souhaite la bienvenue dans votre espace personnel.Essayez de trouver les options disponibles via le menu situé dans le coin gauche.</h3>
+        </ion-card-content>
     </ion-card>
+    <div *ngFor="let authenticate of auth" display=none>
+        <ion-card>
+            <ion-row>
+                <ion-col width="60%" class="list">
+                    <ion-item>Date:{{authenticate.token}}</ion-item>
+                    <ion-item>Heure:{{authenticate.id}}</ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+    </div>
 </ion-content>
 
 
@@ -20,7 +43,7 @@
         <ion-toolbar color="green">
             <button ion-button menuToggle>Toggle Menu</button>
              <button ion-button menuToggle="right">Toggle Right Menu</button> 
-            <!-- <ion-title>Menu</ion-title>
+            <ion-title>Menu</ion-title>
         </ion-toolbar>
     </ion-header>
     <ion-content>
