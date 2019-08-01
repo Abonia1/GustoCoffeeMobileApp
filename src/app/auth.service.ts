@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from  "@angular/router";
 import { Http,Headers, RequestOptions } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { Platform } from '@ionic/angular';
@@ -6,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import { BehaviorSubject } from 'rxjs';
 
 const TOKEN_KEY = 'auth-token';
+const ID_KEY = 'auth-id';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,7 @@ export class AuthService {
   public data:string;
   public logindetail: any;
 
-  constructor(public httpClient: HttpClient,private http: Http,private storage: Storage, private platform: Platform) {
+  constructor(public httpClient: HttpClient,private http: Http,private storage: Storage, private platform: Platform,private  router:  Router) {
     this.platform.ready().then(() => {
       this.checkToken();
     });
@@ -62,7 +64,9 @@ export class AuthService {
       Object.keys(data).forEach(key=> { 
       //console.log(data['token']) ; 
       const token=data['token'];
-      console.log(token);
+      const id=data['id'];
+      console.log(id);
+      this.storage.set(ID_KEY,id);
       return this.storage.set(TOKEN_KEY, token).then(() => {
       this.authenticationState.next(true); 
     });  
@@ -104,16 +108,17 @@ export class AuthService {
           });
         });
       }
-      logintest(username, password) {
-        const accessToken = btoa(username + ':' + password);
-        const token = 'Bearer ' + accessToken;
-        return this.storage.set(TOKEN_KEY, token).then(() => {
-          this.authenticationState.next(true);
-        });
-      }
+      // logintest(username, password) {
+      //   const accessToken = btoa(username + ':' + password);
+      //   const token = 'Bearer ' + accessToken;
+      //   return this.storage.set(TOKEN_KEY, token).then(() => {
+      //     this.authenticationState.next(true);
+      //   });
+      // }
       logout() {
         return this.storage.remove(TOKEN_KEY).then(() => {
           this.authenticationState.next(false);
+          this.router.navigateByUrl('/');
         });
       }
       isAuthenticated() {

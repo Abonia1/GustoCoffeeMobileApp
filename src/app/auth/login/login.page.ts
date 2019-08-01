@@ -28,6 +28,14 @@ export class LoginPage implements OnInit {
       this.auth=data;
       this.router.navigateByUrl('/home');
     });
+  }
+    // logout(){
+    //   this.result = this.authService.logout()
+    //   .then(data=>{
+    //     this.auth=data;
+    //     this.router.navigateByUrl('/');
+    //   });
+    // }
     //console.log(this.result);
     // .then(data=>{
 
@@ -43,7 +51,7 @@ export class LoginPage implements OnInit {
 
 // });
 
-}
+
 
 
 }

@@ -10,7 +10,7 @@
             <ion-item href="/commandes">Mes Commandes</ion-item>
             <ion-item>Reservation</ion-item>
             <ion-item>Mes Information</ion-item>
-            <ion-item>Déconnexion</ion-item>
+            <ion-item (click)="logout()">Déconnexion</ion-item>
         </ion-content>
     </ion-menu>
     <ion-router-outlet id="content1" main></ion-router-outlet>
